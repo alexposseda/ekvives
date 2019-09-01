@@ -10,7 +10,7 @@ return array(
     | The dir where to store the images (relative from public)
     |
     */
-    'dir' => ['files'],
+    'dir' => ['uploads'],
 
     /*
     |--------------------------------------------------------------------------
@@ -25,9 +25,9 @@ return array(
     |        'alias' => 'Local storage',
     |    ]
     */
-    'disks' => [
-
-    ],
+//    'disks' => [
+//
+//    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -39,8 +39,8 @@ return array(
     */
 
     'route' => [
-        'prefix' => 'elfinder',
-        'middleware' => 'admin', //Set to null to disable middleware filter
+        'prefix' => config('backpack.base.route_prefix', 'admin').'/elfinder',
+        'middleware' => null, //Set to null to disable middleware filter
     ],
 
     /*
@@ -52,7 +52,7 @@ return array(
     |
     */
 
-    'access' => 'Barryvdh\Elfinder\Elfinder::checkAccess',
+//    'access' => 'Barryvdh\Elfinder\Elfinder::checkAccess',
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return array(
     |
     */
 
-    'roots' => null,
+//    'roots' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -76,7 +76,15 @@ return array(
     |
     */
 
-    'options' => array(),
+    'options' => array(
+        'roots'  => array(
+            array(
+                'driver' => 'LocalFileSystem',
+                'path'   => public_path().'/upload',
+                'URL'    => env('APP_URL').'/upload'
+            ),
+        )
+    ),
     
     /*
     |--------------------------------------------------------------------------
@@ -87,8 +95,8 @@ return array(
     | See https://github.com/Studio-42/elFinder/wiki/Connector-configuration-options-2.1#root-options
     |
     */
-    'root_options' => array(
-
-    ),
+//    'root_options' => array(
+//
+//    ),
 
 );
