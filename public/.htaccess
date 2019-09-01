@@ -13,11 +13,12 @@ AddType image/webp .webp
 </IfModule>
 <IfModule mod_headers.c>
     Header append Vary Accept env=REDIRECT_accept
-</IfModule>
 
-<FilesMatch ".(jpg|jpeg|png)$">
-  Header set Cache-Control "max-age=2592000"
-</FilesMatch>
+    <FilesMatch ".(jpg|jpeg|png)$">
+      Header set Cache-Control "max-age=2592000"
+    </FilesMatch>
+
+</IfModule>
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
