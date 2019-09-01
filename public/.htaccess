@@ -1,4 +1,24 @@
 AddType image/webp .webp
+
+<FilesMatch ".(jpg|jpeg|png)$">
+  Header set Cache-Control "max-age=2592000"
+</FilesMatch>
+
+
+ExpiresActive On
+
+ExpiresByType image/jpeg "access plus 2592000 seconds"
+ExpiresByType image/png "access plus 2592000 seconds"
+ExpiresByType image/webp "access plus 2592000 seconds"
+ExpiresByType image/gif "access plus 2592000 seconds"
+ExpiresByType image/x-icon "access plus 2592000 seconds"
+
+ExpiresByType text/css "access plus 2592000 seconds"
+ExpiresByType text/javascript "access plus 2592000 seconds"
+ExpiresByType application/javascript "access plus 2592000 seconds"
+ExpiresByType application/x-javascript "access plus 2592000 seconds"
+
+
 <IfModule mod_rewrite.c>
     RewriteEngine On
 
@@ -10,19 +30,6 @@ AddType image/webp .webp
 
     # Serve WebP image instead
     RewriteRule (.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
-</IfModule>
-<IfModule mod_headers.c>
-    Header append Vary Accept env=REDIRECT_accept
-
-    <FilesMatch ".(jpg|jpeg|png)$">
-      Header set Cache-Control "max-age=2592000"
-    </FilesMatch>
-
-</IfModule>
-
-<IfModule mod_rewrite.c>
-    RewriteEngine On
-
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
