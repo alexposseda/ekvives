@@ -12,7 +12,6 @@ yarn-error.log
 composer.lock
 .env
 public/uploads/
-public/vendor/
 public/packages/
 resources/lang/vendor/
 public/watermark/watermark.png
