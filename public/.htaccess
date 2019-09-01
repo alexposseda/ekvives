@@ -32,3 +32,4 @@ AddType image/webp .webp
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 </IfModule>
+

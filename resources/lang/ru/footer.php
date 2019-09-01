@@ -1,7 +1,7 @@
 <?php 
 
  return [
-    "phone" => "(044)220-05-22",
+    "phone" => "(044)599-14-82",
     "facebook" => "-",
     "twitter" => "-",
     "skype" => "-",
@@ -12,8 +12,8 @@
     "name_placeholder" => "Введите имя",
     "company_placeholder" => "Введите компанию",
     "email_placeholder" => "Введите почту",
-    "testimonials" => "Отзывы",
     "menu" => "Меню",
+    "testimonials" => "Отзывы",
     "submit" => "Отправить",
     "subscription" => "Оформить подписку",
     "main" => [
