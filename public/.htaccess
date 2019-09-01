@@ -15,7 +15,7 @@ AddType image/webp .webp
     Header append Vary Accept env=REDIRECT_accept
 </IfModule>
 
-<FilesMatch ".(jpg|jpeg)$">
+<FilesMatch ".(jpg|jpeg|png)$">
   Header set Cache-Control "max-age=2592000"
 </FilesMatch>
 
