@@ -68,11 +68,11 @@
                             <div id="slider-img-products">
                                 @if($product->image)
                                 <div class="s_block shadow" id="slide-main">
-                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}">
+                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" title="<?=  $product->title?>">
                                 </div>
                                 @endif @foreach($product->images as $image)
                                 <div class="s_block shadow" id="slide-{{$loop->index+1}}">
-                                    <img class="animate1" src="{{$image}}">
+                                    <img class="animate1" src="{{$image}}" title="<?=  $product->title?>">
                                 </div>
                                 @endforeach
                             </div>
@@ -81,13 +81,13 @@
                                     @if($product->image)
                                     <li class="slide-main">
                                         <a href="#slide-main">
-                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}">
+                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" title="<?=  $product->title?>">
                                         </a>
                                     </li>
                                     @endif @foreach($product->images as $image)
                                     <li class="slide-{{$loop->index+1}}">
                                         <a href="#slide-{{$loop->index+1}}">
-                                            <img class="animate2" src="{{$image}}">
+                                            <img class="animate2" src="{{$image}}" title="<?=  $product->title?>">
                                         </a>
                                     </li>
                                     @endforeach
@@ -96,14 +96,14 @@
                             @elseif($product->image)
                             <div id="slider-img-products">
                                 <div class="s_block shadow" id="slide-main">
-                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}">
+                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" title="<?=  $product->title?>">
                                 </div>
                             </div>
                             <div id="img-nav">
                                 <ul>
                                     <li class="slide-main">
                                         <a href="#slide-main">
-                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}">
+                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" title="<?=  $product->title?>">
                                         </a>
                                     </li>
                                 </ul>
