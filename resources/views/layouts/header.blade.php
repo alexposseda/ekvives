@@ -7,6 +7,15 @@
 
 		return url()->to($url);
 	}
+
+	function clearPhone($phone){
+		if(!is_string($phone)){
+			$value = (string)$phone;
+		}
+		$result = preg_replace("/\D/", '', trim($phone));
+
+		return '+'.$result;;
+	}
 ?>
 
 <!-- Header -->
@@ -24,7 +33,7 @@
 						<ul class="list-inline xs-text-center text-white mt-5 contactListHeader">
 							@foreach(Lang::get('header.phones') as $phone ) @if($phone != '-')
 							<li class="m-0 pl-10 pr-10">
-								<a href="tel: {{$phone}}" class="text-white">
+								<a href="tel: {{clearPhone($phone)}}" class="text-white">
 									<i class="fa fa-phone text-theme-colored"></i> {{$phone}}
 								</a>
 							</li>
