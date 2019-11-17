@@ -56,7 +56,7 @@
 										@if($defaultLanguage == $language)
 											<a href="<?= clearLangPartsFromUrl()?>">{{strtoupper($language)}}</a>
 										@else
-											<a href="/{{$language}}<?= \Request::getRequestUri()?>">{{strtoupper($language)}}</a>
+											<a href="{{url()->to($language . \Request::getRequestUri())}}">{{strtoupper($language)}}</a>
 										@endif
 									</li>
 									@endif @endforeach
@@ -73,10 +73,10 @@
 			<div class="container">
 				<nav id="menuzord-right" class="menuzord default headerMenuWrap">
 					@if(request()->path()== '/')
-					<img src="/images/logo.png" alt="logo">
+					<img src="{{url()->asset('/images/logo.png')}}" alt="logo">
 					@else
 					<a class="menuzord-brand pull-left flip xs-pull-center noMargin" href="/">
-						<img src="/images/logo.png" alt="logo">
+						<img src="{{url()->asset('/images/logo.png')}}" alt="logo">
 					</a>
 					@endif
 					
@@ -88,7 +88,7 @@
 							<ul class="dropdown">
 								@foreach($categories as $category)
 								<li>
-									<a href="{{$category->path}}">{{$category->title}}</a>
+									<a href="{{url()->to($category->path)}}">{{$category->title}}</a>
 								</li>
 								@endforeach
 							</ul>

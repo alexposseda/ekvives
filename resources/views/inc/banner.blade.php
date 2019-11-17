@@ -11,7 +11,7 @@
 						</li>
                         @if(isset($breadcrumbs)) @foreach($breadcrumbs as $breadcrumb)
                         <li>
-							<a href="{{$breadcrumb['path']}}">{{$breadcrumb['title']}}</a>
+							<a href="{{url()->to($breadcrumb['path'])}}">{{$breadcrumb['title']}}</a>
 						</li>
                         @endforeach @endif
 						<li class="active">{{$title}}</li>
@@ -19,6 +19,5 @@
 				</div>
 			</div>
 		</div>
-<a class="bannerBackButton" href="{{$breadcrumb['path'] ?? '/'}}">@lang('banners.back')</a>
 	</div>
 </section>
