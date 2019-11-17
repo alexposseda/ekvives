@@ -13,7 +13,7 @@
 
 
 
-Route::get('setlocale/{locale}', 'IndexController@changeLanguage');
+//Route::get('setlocale/{locale}', 'IndexController@changeLanguage');
 
 Route::get('/', 'IndexController@index');
 

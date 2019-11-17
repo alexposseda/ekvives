@@ -18,12 +18,15 @@ class Locale
     {
         $app_locales = Language::getLocales();
 
-        $default = Language::getDefault();
-        $current = session()->get('locale');
-        
-        $locale = in_array($current, $app_locales) ? $current : $default;
+        $uri = \Request::path();
+        $segmentsURI = explode('/',$uri);
+        if (!empty($segmentsURI[0]) && in_array($segmentsURI[0], $app_locales)) {
+            $current = $segmentsURI[0];
+        } else {
+            $current = Language::getDefault();
+        }
 
-        \App::setLocale($locale);
+        \App::setLocale($current);
         return $next($request);
     }
 }

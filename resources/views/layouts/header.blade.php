@@ -1,3 +1,14 @@
+<?php
+	function clearLangPartsFromUrl(){
+		$urlParts = explode('/',\Request::path());
+		array_shift($urlParts);
+
+		$url = implode('/', $urlParts) /*. (\Request::getQueryString() ? ('?' . \Request::getQueryString()) : '')*/;
+
+		return url()->to($url);
+	}
+?>
+
 <!-- Header -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZJJT2"
@@ -39,9 +50,14 @@
 							<li class="hiddenMenu">
 								<a class="mainLang">{{strtoupper(App::getLocale())}}</a>
 								<ul class="dropdown">
+									<?php $defaultLanguage = \App\Models\Language::getDefault();?>
 									@foreach($locales as $language) @if(App::getLocale() != $language)
 									<li>
-										<a href="/setlocale/{{$language}}">{{strtoupper($language)}}</a>
+										@if($defaultLanguage == $language)
+											<a href="<?= clearLangPartsFromUrl()?>">{{strtoupper($language)}}</a>
+										@else
+											<a href="/{{$language}}<?= \Request::getRequestUri()?>">{{strtoupper($language)}}</a>
+										@endif
 									</li>
 									@endif @endforeach
 								</ul>
