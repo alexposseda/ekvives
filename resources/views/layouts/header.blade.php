@@ -1,3 +1,23 @@
+<?php
+	function clearLangPartsFromUrl(){
+		$urlParts = explode('/',\Request::path());
+		array_shift($urlParts);
+
+		$url = implode('/', $urlParts) /*. (\Request::getQueryString() ? ('?' . \Request::getQueryString()) : '')*/;
+
+		return url()->to($url);
+	}
+
+	function clearPhone($phone){
+		if(!is_string($phone)){
+			$value = (string)$phone;
+		}
+		$result = preg_replace("/\D/", '', trim($phone));
+
+		return '+'.$result;;
+	}
+?>
+
 <!-- Header -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZJJT2"
@@ -13,7 +33,7 @@
 						<ul class="list-inline xs-text-center text-white mt-5 contactListHeader">
 							@foreach(Lang::get('header.phones') as $phone ) @if($phone != '-')
 							<li class="m-0 pl-10 pr-10">
-								<a href="tel: {{$phone}}" class="text-white">
+								<a href="tel: {{clearPhone($phone)}}" class="text-white">
 									<i class="fa fa-phone text-theme-colored"></i> {{$phone}}
 								</a>
 							</li>
@@ -39,9 +59,14 @@
 							<li class="hiddenMenu">
 								<a class="mainLang">{{strtoupper(App::getLocale())}}</a>
 								<ul class="dropdown">
+									<?php $defaultLanguage = \App\Models\Language::getDefault();?>
 									@foreach($locales as $language) @if(App::getLocale() != $language)
 									<li>
-										<a href="/setlocale/{{$language}}">{{strtoupper($language)}}</a>
+										@if($defaultLanguage == $language)
+											<a href="<?= clearLangPartsFromUrl()?>">{{strtoupper($language)}}</a>
+										@else
+											<a href="{{url()->to($language . \Request::getRequestUri())}}">{{strtoupper($language)}}</a>
+										@endif
 									</li>
 									@endif @endforeach
 								</ul>
@@ -57,10 +82,10 @@
 			<div class="container">
 				<nav id="menuzord-right" class="menuzord default headerMenuWrap">
 					@if(request()->path()== '/')
-					<img src="/images/logo.png" alt="logo">
+					<img src="{{url()->asset('/images/logo.png')}}" alt="logo">
 					@else
 					<a class="menuzord-brand pull-left flip xs-pull-center noMargin" href="/">
-						<img src="/images/logo.png" alt="logo">
+						<img src="{{url()->asset('/images/logo.png')}}" alt="logo">
 					</a>
 					@endif
 					
@@ -72,7 +97,7 @@
 							<ul class="dropdown">
 								@foreach($categories as $category)
 								<li>
-									<a href="{{$category->path}}">{{$category->title}}</a>
+									<a href="{{url()->to($category->path)}}">{{$category->title}}</a>
 								</li>
 								@endforeach
 							</ul>

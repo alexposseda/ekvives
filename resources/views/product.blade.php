@@ -68,11 +68,11 @@
                             <div id="slider-img-products">
                                 @if($product->image)
                                 <div class="s_block shadow" id="slide-main">
-                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}">
+                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" title="<?=  $product->title?>">
                                 </div>
                                 @endif @foreach($product->images as $image)
                                 <div class="s_block shadow" id="slide-{{$loop->index+1}}">
-                                    <img class="animate1" src="{{$image}}">
+                                    <img class="animate1" src="{{$image}}" title="<?=  $product->title?>">
                                 </div>
                                 @endforeach
                             </div>
@@ -81,13 +81,13 @@
                                     @if($product->image)
                                     <li class="slide-main">
                                         <a href="#slide-main">
-                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}">
+                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" title="<?=  $product->title?>">
                                         </a>
                                     </li>
                                     @endif @foreach($product->images as $image)
                                     <li class="slide-{{$loop->index+1}}">
                                         <a href="#slide-{{$loop->index+1}}">
-                                            <img class="animate2" src="{{$image}}">
+                                            <img class="animate2" src="{{$image}}" title="<?=  $product->title?>">
                                         </a>
                                     </li>
                                     @endforeach
@@ -96,14 +96,14 @@
                             @elseif($product->image)
                             <div id="slider-img-products">
                                 <div class="s_block shadow" id="slide-main">
-                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}">
+                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" title="<?=  $product->title?>">
                                 </div>
                             </div>
                             <div id="img-nav">
                                 <ul>
                                     <li class="slide-main">
                                         <a href="#slide-main">
-                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}">
+                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" title="<?=  $product->title?>">
                                         </a>
                                     </li>
                                 </ul>
@@ -116,11 +116,11 @@
                             <!-- Small modal end -->
                             @if($product->price && $product->price != '/uploads/')
                             <div class="orderFormItem">
-                                <a href="/uploads/{{$product->price}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.price')</a>
+                                <a href="<?= url()->to('/uploads')?>/{{$product->price}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.price')</a>
                             </div>
                             @endif @if($product->catalog && $product->catalog != '/uploads/')
                             <div class="orderFormItem">
-                                <a href="/uploads/{{$product->catalog}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.catalog')</a>
+                                <a href="<?= url()->to('/uploads')?>/{{$product->catalog}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.catalog')</a>
                             </div>
                             @endif
                         </div>
@@ -169,9 +169,9 @@
                                 </div>
                                 <div class="entry-content p-20">
                                     <h4 class="entry-title text-white text-uppercase">
-                                        <a class="font-weight-600" href="{{$category->path}}">{{$category->title}}</a>
+                                        <a class="font-weight-600" href="{{url()->to($category->path)}}">{{$category->title}}</a>
                                     </h4>
-                                    <a class="btn btn-theme-colored btn-sm mt-10" href="{{$category->path}}">@lang('pages.product.read_more')</a>
+                                    <a class="btn btn-theme-colored btn-sm mt-10" href="{{url()->to($category->path)}}">@lang('pages.product.read_more')</a>
                                 </div>
                             </article>
                         </div>
