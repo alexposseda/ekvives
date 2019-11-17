@@ -8,7 +8,7 @@
 				<div class="col-sm-6 col-md-4 col-lg-3 project catalogItemCard mb-30">
 					<div class="productTypesWrap">
 						@if($product->path)
-						<a class="hoverButton" href="{{$product->path}}">
+						<a class="hoverButton" href="{{url()->to($product->path)}}">
 							<i class="flaticon-attachment"></i>
 						</a>
 						@endif

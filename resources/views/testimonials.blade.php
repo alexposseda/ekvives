@@ -17,12 +17,12 @@
                             <div class="overlay-shade"></div>
                             <div class="icons-holder fullSizeCover">
                                 <div class="icons-holder-inner fullSizeCover mrReset">
-                                    <a data-lightbox="image" href="{{$testimonial->getPhoto('image', 'big')}}" class="fullSizeCoverBtn">
+                                    <a data-lightbox="image" href="{{url()->to($testimonial->getPhoto('image', 'big'))}}" class="fullSizeCoverBtn">
                                         <i class="fa fa-picture-o"></i>
                                     </a>
                                 </div>
                             </div>
-                            <a class="hover-link" data-lightbox="image" href="{{$testimonial->getPhoto('image', 'big')}}">@lang('pages.testimonials.download')</a>
+                            <a class="hover-link" data-lightbox="image" href="{{url()->to($testimonial->getPhoto('image', 'big'))}}">@lang('pages.testimonials.download')</a>
                         </div>
                         <div class="button mt-20 reviewBtnWrap">
                             @if($testimonial->file && $testimonial->file != '/uploads/')

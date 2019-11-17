@@ -116,11 +116,11 @@
                             <!-- Small modal end -->
                             @if($product->price && $product->price != '/uploads/')
                             <div class="orderFormItem">
-                                <a href="/uploads/{{$product->price}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.price')</a>
+                                <a href="<?= url()->to('/uploads')?>/{{$product->price}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.price')</a>
                             </div>
                             @endif @if($product->catalog && $product->catalog != '/uploads/')
                             <div class="orderFormItem">
-                                <a href="/uploads/{{$product->catalog}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.catalog')</a>
+                                <a href="<?= url()->to('/uploads')?>/{{$product->catalog}}" target="_blank" class="downloadItem">@lang('pages.product.buttons.catalog')</a>
                             </div>
                             @endif
                         </div>
@@ -169,9 +169,9 @@
                                 </div>
                                 <div class="entry-content p-20">
                                     <h4 class="entry-title text-white text-uppercase">
-                                        <a class="font-weight-600" href="{{$category->path}}">{{$category->title}}</a>
+                                        <a class="font-weight-600" href="{{url()->to($category->path)}}">{{$category->title}}</a>
                                     </h4>
-                                    <a class="btn btn-theme-colored btn-sm mt-10" href="{{$category->path}}">@lang('pages.product.read_more')</a>
+                                    <a class="btn btn-theme-colored btn-sm mt-10" href="{{url()->to($category->path)}}">@lang('pages.product.read_more')</a>
                                 </div>
                             </article>
                         </div>
