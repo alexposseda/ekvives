@@ -48,21 +48,21 @@
 				@foreach($category->children as $sub_category)
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4 project catalogItemCard mb-30">
 					<div class="productTypesWrap">
-						<a class="hoverButton" href="{{$sub_category->path}}">
+						<a class="hoverButton" href="{{url()->to($sub_category->path)}}">
 							
 						</a>
 						<div class="thumb">
 							<img class=" img_category" alt="product" src="{{$sub_category->getPhoto('image', 'min')}}">
 						</div>
 						<div class="project-details p-15 pt-10 pb-10">
-							<h4 class="title font-weight-700 text-uppercase mt-0">{{$sub_category->title}}</h4>
+							<h3 class="title font-weight-700 text-uppercase mt-0">{{$sub_category->title}}</h3>
 						</div>
 					</div>
 				</div>
 				@endforeach @foreach($category->products as $product)
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4 project catalogItemCard mb-30">
 					<div class="productTypesWrap">
-						<a class="hoverButton" href="{{$product->path}}">
+						<a class="hoverButton" href="{{url()->to($product->path)}}">
 							
 						</a>
 						<div class="thumb">
@@ -70,7 +70,7 @@
 						</div>
 						<div class="project-details p-15 pt-10 pb-10">
 						@if($product->article)
-							<h5 class="sub-title font-14 font-weight-500 mb-5">{{$product->article}}</h5>
+							<h3 class="sub-title font-14 font-weight-500 mb-5">{{$product->article}}</h3>
 							@endif
 							<h4 class="title font-weight-700 text-uppercase mt-0">{{$product->title}}</h4>
 						</div>

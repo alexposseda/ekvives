@@ -11,18 +11,18 @@
                     <div class="gallery-item photography photoBorder">
                         <h4 class="font-weight-700 mt-20 font-size-title">{{$testimonial->title}}</h4>
                         <span class="date">{{$testimonial->created_at->format('d.m.Y')}}</span>
-                        <p class="mt-20">{{$testimonial->description}}</p>
+                        <p class="mt-20"></p>
                         <div class="thumb mt-20">
                             <img class="img-fullwidth" src="{{$testimonial->getPhoto('image', 'mid')}}" alt="project">
                             <div class="overlay-shade"></div>
                             <div class="icons-holder fullSizeCover">
                                 <div class="icons-holder-inner fullSizeCover mrReset">
-                                    <a data-lightbox="image" href="{{$testimonial->getPhoto('image', 'big')}}" class="fullSizeCoverBtn">
+                                    <a data-lightbox="image" href="{{url()->to($testimonial->getPhoto('image', 'big'))}}" class="fullSizeCoverBtn">
                                         <i class="fa fa-picture-o"></i>
                                     </a>
                                 </div>
                             </div>
-                            <a class="hover-link" data-lightbox="image" href="{{$testimonial->getPhoto('image', 'big')}}">@lang('pages.testimonials.download')</a>
+                            <a class="hover-link" data-lightbox="image" href="{{url()->to($testimonial->getPhoto('image', 'big'))}}">@lang('pages.testimonials.download')</a>
                         </div>
                         <div class="button mt-20 reviewBtnWrap">
                             @if($testimonial->file && $testimonial->file != '/uploads/')

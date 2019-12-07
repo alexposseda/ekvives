@@ -22,14 +22,14 @@
                                         </div>
                                     </div>
                                     <div class="entry-content p-20 post clearfix bg-lighter">
-                                        <h4 class="entry-title text-white text-uppercase"><a class="font-weight-600" href="{{$article->path}}">{{$article->title}}</a></h4>
+                                        <h4 class="entry-title text-white text-uppercase"><a class="font-weight-600" href="{{url()->to($article->path)}}">{{$article->title}}</a></h4>
                                         <div class="entry-meta">
                                             <ul class="list-inline font-12 mb-10">
                                                 <li><i class="fa fa-calendar text-theme-colored mr-5"></i>{{$article->published_at->format('M d, Y')}} | </li>
                                             </ul>
                                         </div>
                                         <p class="itemText">{{$article->description ?? ''}}</p>
-                                        <a class="btn btn-theme-colored btn-sm" href="{{$article->path}}">@lang('pages.main.news.watch')</a>
+                                        <a class="btn btn-theme-colored btn-sm" href="{{url()->to($article->path)}}">@lang('pages.main.news.watch')</a>
                                     </div>
                                 </article>
                             <!-- </div>

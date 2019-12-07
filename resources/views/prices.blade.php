@@ -15,7 +15,7 @@
                             <span class="date">{{$price->created_at->format('d.m.Y')}}</span>
                             <div class="button reviewBtnWrap">
                             @if($price->file && $price->file != '/uploads/')
-                                <a href="{{$price->file}}" class="btn btn-sm btn-theme-colored" target="_blank">@lang('pages.prices.download')</a>
+                                <a href="{{url()->to($price->file)}}" class="btn btn-sm btn-theme-colored" target="_blank">@lang('pages.prices.download')</a>
                             @endif
                         </div>
                         </div>
@@ -25,12 +25,12 @@
                             <div class="overlay-shade"></div>
                             <div class="icons-holder fullSizeCover">
                                 <div class="icons-holder-inner fullSizeCover mrReset">
-                                    <a data-lightbox="image" href="{{$price->getPhoto('image', 'big')}}" class="fullSizeCoverBtn">
+                                    <a data-lightbox="image" href="{{url()->to($price->getPhoto('image', 'big'))}}" class="fullSizeCoverBtn">
                                         <i class="fa fa-picture-o"></i>
                                     </a>
                                 </div>
                             </div>
-                            <a class="hover-link" data-lightbox="image" href="{{$price->getPhoto('image', 'big')}}">@lang('pages.prices.view_more')</a>
+                            <a class="hover-link" data-lightbox="image" href="{{url()->to($price->getPhoto('image', 'big'))}}">@lang('pages.prices.view_more')</a>
                         </div>
                         
                     </div>

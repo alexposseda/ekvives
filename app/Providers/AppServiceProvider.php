@@ -38,6 +38,14 @@ class AppServiceProvider extends ServiceProvider
             $response['categories'] = Category::getAll()->filter(function ($category) { return $category->depth == 1; });
             $view->with($response);
         });
+
+        \URL::forceRootUrl(\Config::get('app.url'));
+        // And this if you wanna handle https URL scheme
+        // It's not usefull for http://www.example.com, it's just to make it more independant from the constant value
+        if (strpos(\Config::get('app.url'), 'https://') === 0) {
+            \URL::forceScheme('https');
+            //use \URL:forceSchema('https') if you use laravel < 5.4
+        }
     }
 
     /**

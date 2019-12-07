@@ -72,4 +72,4 @@
 /*!
 *  Custom css
 */
-.bp-center.inner-header{background-position:center center!important}.blog-posts .entry-descr{text-indent:0!important}.blog-posts .media{flex-direction:column}.blog-posts .media-body{margin:10px 0 0}@media (min-width: 576px){.blog-posts .media{flex-direction:row;align-items:center}.blog-posts .media-body{padding-left:40px;margin:0}}.blog-posts .entry-descr{font-size:16px;}
+.bp-center.inner-header{background-position:center center!important}.blog-posts .entry-descr{text-indent:0!important}.blog-posts .media{flex-direction:column}.blog-posts .media-body{margin:10px 0 0}@media (min-width: 576px){.blog-posts .media{flex-direction:row;align-items:center}.blog-posts .media-body{padding-left:40px;margin:0}}.blog-posts .entry-descr{font-size:16px;}.breadcrumb.white li strong{color: inherit;}.sub-title{text-indent: 0!important;}

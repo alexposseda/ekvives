@@ -22,7 +22,9 @@ class CategoryController extends Controller
         if (!$category) {
             $product = Product::where('slug', collect(request()->segments())->last())->first();
             if ($product) {
-                $breadcrumbs = $product->breadcrumbs;
+                $breadcrumbs = array_reverse($product->breadcrumbs);
+
+
                 return view('product', compact('product', 'breadcrumbs', 'categories'));
             }
         }
@@ -31,10 +33,11 @@ class CategoryController extends Controller
             abort(404);
         }
 
-        if ($category->products->count() == 1) {
-            return redirect($category->products->first()->path);
-        }
+//        if ($category->products->count() == 1) {
+//            return redirect($category->products->first()->path);
+//        }
         $breadcrumbs = $category->breadcrumbs;
+//        var_dump($breadcrumbs); die();
         return view('category', compact('category', 'breadcrumbs', 'categories'));
     }
 
