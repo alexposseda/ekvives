@@ -21,7 +21,7 @@ class CategoryController extends Controller
             if(\App::getLocale() == Language::getDefault()){
                 return '/' . request()->path() == $item->path;
             }else{
-                return '/' . request()->path() == '/'.\App::getLocale().$item->path;
+                return '/' . request()->path() == '/' .$item->path;
             }
         })->first();
 
