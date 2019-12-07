@@ -23,7 +23,7 @@
                             </li>
                             <?php $bCnt++?>
                         @endforeach @endif
-                        <li class="active">{{$title}}</li>
+                        <li class="active"><strong>{{$title}}</strong></li>
                     </ul>
                 </div>
             </div>

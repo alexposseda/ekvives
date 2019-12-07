@@ -168,9 +168,9 @@
                                     </div>
                                 </div>
                                 <div class="entry-content p-20">
-                                    <h4 class="entry-title text-white text-uppercase">
+                                    <h3 class="entry-title text-white text-uppercase">
                                         <a class="font-weight-600" href="{{url()->to($category->path)}}">{{$category->title}}</a>
-                                    </h4>
+                                    </h3>
                                     <a class="btn btn-theme-colored btn-sm mt-10" href="{{url()->to($category->path)}}">@lang('pages.product.read_more')</a>
                                 </div>
                             </article>
@@ -187,11 +187,11 @@
                                 </div>
                                 <div class="entry-content p-20">
                                     @if($product->article)
-                                    <h5 class="sub-title font-14 font-weight-500 mb-5">{{$suggested_product->article}}</h5>
+                                    <p class="sub-title font-14 font-weight-500 mb-5">{{$suggested_product->article}}</p>
                                     @endif
-                                    <h4 class="entry-title text-white text-uppercase">
+                                    <h3 class="entry-title text-white text-uppercase">
                                         <a class="font-weight-600" href="{{$suggested_product->path}}">{{$suggested_product->title}}</a>
-                                    </h4>
+                                    </h3>
                                     <a class="btn btn-theme-colored btn-sm mt-10" href="{{$suggested_product->path}}">@lang('pages.product.read_more')</a>
                                 </div>
                             </article>

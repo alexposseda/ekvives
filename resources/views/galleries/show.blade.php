@@ -7,11 +7,11 @@
 @endsection
 @section('content') @include('inc.banner', ['title' => $gallery->title, 'picture' => $gallery->getPhoto('banner', 'big')])
 <section>
-  <div class="container-fluid pb-0">
-    <div class="section-content">
+  <div class="container">
+    <div class="section-content clearfix">
       <div class="row">
         <div class="col-md-12">
-          <div id="grid" class="gallery-isotope grid-4 gutter clearfix">
+          <div id="grid" class="gallery-isotope grid-4 gutter clearfix" style="min-height: 210px;">
             @foreach($gallery->photos as $photo)
             <div class="gallery-item design">
               <div class="thumb">

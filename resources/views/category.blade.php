@@ -55,7 +55,7 @@
 							<img class=" img_category" alt="product" src="{{$sub_category->getPhoto('image', 'min')}}">
 						</div>
 						<div class="project-details p-15 pt-10 pb-10">
-							<h4 class="title font-weight-700 text-uppercase mt-0">{{$sub_category->title}}</h4>
+							<h3 class="title font-weight-700 text-uppercase mt-0">{{$sub_category->title}}</h3>
 						</div>
 					</div>
 				</div>
@@ -70,7 +70,7 @@
 						</div>
 						<div class="project-details p-15 pt-10 pb-10">
 						@if($product->article)
-							<h5 class="sub-title font-14 font-weight-500 mb-5">{{$product->article}}</h5>
+							<h3 class="sub-title font-14 font-weight-500 mb-5">{{$product->article}}</h3>
 							@endif
 							<h4 class="title font-weight-700 text-uppercase mt-0">{{$product->title}}</h4>
 						</div>

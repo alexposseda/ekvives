@@ -83,7 +83,7 @@ if(!function_exists('clearPhone')){
                     <ul class="social-icons icon-bordered icon-circled icon-sm mt-15">
                         @if(Lang::get('footer.facebook') != '-')
                             <li>
-                                <a href="@lang('footer.faceook')">
+                                <a href="@lang('footer.facebook')">
                                     <i class="fa fa-facebook"></i>
                                 </a>
                             </li>
@@ -114,7 +114,7 @@ if(!function_exists('clearPhone')){
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="widget dark">
-                    <h5 class="widget-title line-bottom">@lang('footer.testimonials')</h5>
+                    <h3 class="widget-title line-bottom">@lang('footer.testimonials')</h3>
                     <div class="latest-posts">
                         @foreach($last_testimonials as $testimonial)
                             <article class="post media-post clearfix pb-0 mb-10">
@@ -122,10 +122,10 @@ if(!function_exists('clearPhone')){
                                     <img alt="" src="{{$testimonial->getPhoto('image', 'min')}}">
                                 </a>
                                 <div class="post-right">
-                                    <h5 class="post-title mt-0 mb-5">
+                                    <p class="post-title mt-0 mb-5">
                                         <a href="{{$testimonial->file && $testimonial->file != '/uploads/' ? $testimonial->file : '#'}}"
                                            download>{{$testimonial->title}}</a>
-                                    </h5>
+                                    </p>
                                     <p class="post-date mb-0 font-12">{{$testimonial->created_at->format('d.m.Y')}}</p>
                                 </div>
                             </article>
@@ -136,7 +136,7 @@ if(!function_exists('clearPhone')){
             <div class="col-sm-6 col-md-3">
                 @if($footer_menu_items->count())
                     <div class="widget dark">
-                        <h5 class="widget-title line-bottom">@lang('footer.menu')</h5>
+                        <h3 class="widget-title line-bottom">@lang('footer.menu')</h3>
                         <ul class="list angle-double-right list-border">
                             @foreach($footer_menu_items as $item)
                                 <li>
@@ -149,7 +149,7 @@ if(!function_exists('clearPhone')){
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="widget dark">
-                    <h5 class="widget-title line-bottom">@lang('footer.subscription')</h5>
+                    <h3 class="widget-title line-bottom">@lang('footer.subscription')</h3>
                     <form id="footer_quick_contact_form" name="footer_quick_contact_form" class="quick-contact-form"
                           action="/subscribe" method="post">
                         {{csrf_field()}}
