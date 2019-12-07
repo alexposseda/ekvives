@@ -61,7 +61,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admi
     Route::post('gallery-delete', ['uses' => 'GalleryCrudController@handleDropzoneDelete']);
     Route::post('product-upload', ['uses' => 'ProductCrudController@handleDropzoneUpload']);
     Route::post('product-delete', ['uses' => 'ProductCrudController@handleDropzoneDelete']);
+	
 });
 
 Route::get('{categories?}', 'CategoryController@show')->where(['categories' => '.*']);
-
