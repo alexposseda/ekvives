@@ -19,9 +19,9 @@
         <div class="navbar-custom-menu pull-left">
             <ul class="nav navbar-nav">
                 @if (App::getLocale() === 'en')
-                    <li><a href="https://ekvives.com/setlocale/ru">English</a></li>
+                    <li><a href="/setlocale/ru">English</a></li>
                 @else
-                    <li><a href="https://ekvives.com/setlocale/en">Русский</a></li>
+                    <li><a href="/setlocale/en">Русский</a></li>
                 @endif
             </ul>
         </div>

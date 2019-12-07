@@ -13,13 +13,13 @@
 
 
 
-//Route::get('setlocale/{locale}', 'IndexController@changeLanguage');
+Route::get('setlocale/{locale}', 'IndexController@changeLanguage');
 
 Route::get('/', 'IndexController@index');
 
 Route::get('about-us', 'PageController@aboutUs')->name('about-us');
 Route::get('testimonials', 'TestimonialController@index')->name('testimonials');
-Route::get('documents', 'DocumentController@index')->name('documents');
+Route::get('/documents', 'DocumentController@index')->name('documents');
 Route::get('reference-objects', 'GalleryController@index')->name('galleries');
 Route::get('reference-objects/{gallery}', 'GalleryController@show')->name('gallery');
 
@@ -39,6 +39,32 @@ Route::post('subscribe', 'ContactController@subscribe');
 Route::post('contact', 'ContactController@store');
 Route::post('product', 'CategoryController@store');
 Route::post('price_clarify', 'PriceController@store');
+
+
+    Route::get('/en', 'IndexController@index');
+
+    Route::get('en/about-us', 'PageController@aboutUs')->name('about-us');
+    Route::get('en/testimonials', 'TestimonialController@index')->name('testimonials');
+    Route::get('en/documents', 'DocumentController@index')->name('documents');
+    Route::get('en/reference-objects', 'GalleryController@index')->name('galleries');
+    Route::get('en/reference-objects/{gallery}', 'GalleryController@show')->name('gallery');
+
+    Route::get('en/categories', 'CategoryController@index')->name('categories');
+    Route::get('en/search', 'SearchController@index')->name('search');
+
+    Route::get('en/categories/{category}', 'CategoryController@show')->name('category.show');
+
+    Route::get('en/news', 'NewsController@index')->name('news');
+    Route::get('en/news/{article}', 'NewsController@show')->name('article');
+
+    Route::get('en/prices', 'PriceController@index')->name('prices');
+
+    Route::get('en/contacts', 'ContactController@index')->name('contacts');
+
+    Route::post('en/subscribe', 'ContactController@subscribe');
+    Route::post('en/contact', 'ContactController@store');
+    Route::post('en/product', 'CategoryController@store');
+    Route::post('en/price_clarify', 'PriceController@store');
 
 // Admin Interface Routes
 Route::group(['prefix' => 'admin', 'middleware' => 'admin', 'namespace' => 'Admin'], function () {

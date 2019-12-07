@@ -34,8 +34,8 @@
 					    {{trans('backpack::crud.language')}}: {{ $crud->model->getAvailableLocales()[$crud->request->input('locale')?$crud->request->input('locale'):App::getLocale()] }} <span class="caret"></span>
 					  </button>
 					  <ul class="dropdown-menu">
-						  <li><a href="https://ekvives.com/setlocale/en">English</a></li>
-						  <li><a href="https://ekvives.com/setlocale/ru">Русский</a></li>
+						  <li><a href="/setlocale/en">English</a></li>
+						  <li><a href="/setlocale/ru">Русский</a></li>
 					  </ul>
 					</div>
 					<h3 class="box-title" style="line-height: 30px;">{{ trans('backpack::crud.edit') }}</h3>

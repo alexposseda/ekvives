@@ -17,12 +17,16 @@ class IndexController extends Controller
         return view('main_page.index', $response);
     }
 
-//    public function changeLanguage($locale) {
-//        $app_locales = Language::getLocales();
-//        if (in_array($locale, $app_locales)) {
-//            session()->put('locale', $locale);
-//        }
-//
-//        return redirect()->back();
-//    }
+    public function changeLanguage($locale) {
+        $app_locales = Language::getLocales();
+        if (in_array($locale, $app_locales)) {
+            \App::setLocale($locale);
+            session()->put('override_locale', $locale);
+        }else{
+            session()->put('override_locale', $locale);
+            \App::setLocale(Language::getDefault());
+        }
+
+        return redirect()->back();
+    }
 }

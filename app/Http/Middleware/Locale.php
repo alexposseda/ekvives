@@ -16,14 +16,20 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        $app_locales = Language::getLocales();
 
-        $uri = \Request::path();
-        $segmentsURI = explode('/',$uri);
-        if (!empty($segmentsURI[0]) && in_array($segmentsURI[0], $app_locales)) {
-            $current = $segmentsURI[0];
-        } else {
-            $current = Language::getDefault();
+        if(session()->get('override_locale')){
+            $current = session()->get('override_locale');
+        }else{
+            $app_locales = Language::getLocales();
+
+            $uri         = \Request::path();
+            $segmentsURI = explode('/', $uri);
+            if(!empty($segmentsURI[0]) && in_array($segmentsURI[0], $app_locales)){
+                $current = $segmentsURI[0];
+            }else{
+                $current = Language::getDefault();
+            }
+
         }
 
         \App::setLocale($current);

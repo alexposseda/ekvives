@@ -15,8 +15,8 @@
 	  </button>
 		<ul class="dropdown-menu dropdown-menu-right">
 			<li class="dropdown-header">{{ trans('backpack::crud.edit_translations') }}:</li>
-			<li><a href="https://ekvives.com/setlocale/en">English</a></li>
-			<li><a href="https://ekvives.com/setlocale/ru">Русский</a></li>
+			<li><a href="/setlocale/en">English</a></li>
+			<li><a href="/setlocale/ru">Русский</a></li>
 		</ul>
 	</div>
 
