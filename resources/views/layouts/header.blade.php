@@ -17,7 +17,9 @@
 		return '+'.$result;;
 	}
 ?>
-
+<?php
+$defaultLanguage = \App\Models\Language::getDefault();
+?>
 <!-- Header -->
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZJJT2"
@@ -59,7 +61,7 @@
 							<li class="hiddenMenu">
 								<a class="mainLang">{{strtoupper(App::getLocale())}}</a>
 								<ul class="dropdown">
-									<?php $defaultLanguage = \App\Models\Language::getDefault();?>
+
 									@foreach($locales as $language) @if(App::getLocale() != $language)
 									<li>
 										@if($defaultLanguage == $language)
@@ -115,7 +117,7 @@
 								@endforeach
 							</ul>
 							@else
-							<a href="{{$item->url()}}">{{$item->name}}</a>
+								<a href="{{$item->url()}}">{{$item->name}}</a>
 							@endif
 						</li>
 						@endif @endforeach

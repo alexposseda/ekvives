@@ -16,16 +16,15 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-
-        if(session()->get('override_locale')){
+        if($request->route()->getPrefix() == 'admin' AND session()->get('override_locale')){
             $current = session()->get('override_locale');
         }else{
             $app_locales = Language::getLocales();
 
-            $uri         = \Request::path();
+            $uri         = $request->path();
             $segmentsURI = explode('/', $uri);
             if(!empty($segmentsURI[0]) && in_array($segmentsURI[0], $app_locales)){
-                $current = $segmentsURI[0];
+                $current = array_shift($segmentsURI);
             }else{
                 $current = Language::getDefault();
             }

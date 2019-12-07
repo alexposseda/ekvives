@@ -112,6 +112,7 @@ class Category extends Model
 
     public function getPrePath()
     {
+
         if ($this->depth > 1) {
             return  $this->parent->getPrePath() . '/' . $this->parent->slug;
         }
@@ -138,7 +139,12 @@ class Category extends Model
 
     public function getPathAttribute()
     {
-        return $this->getPrePath() . '/' . $this->slug;
+        if(Language::getDefault() == \App::getLocale()){
+            return $this->getPrePath() . '/' . $this->slug;
+        }
+
+        return \App::getLocale().$this->getPrePath() . '/' . $this->slug;
+
     }
 
     public function getBreadcrumbsAttribute()

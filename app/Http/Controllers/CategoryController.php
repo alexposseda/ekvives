@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Language;
 use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\Order;
@@ -15,8 +16,13 @@ class CategoryController extends Controller
     public function show()
     {
         $categories = Category::getAll();
+
         $category = $categories->filter(function ($item) {
-            return '/' . request()->path() == $item->path;
+            if(\App::getLocale() == Language::getDefault()){
+                return '/' . request()->path() == $item->path;
+            }else{
+                return '/' . request()->path() == '/'.\App::getLocale().$item->path;
+            }
         })->first();
 
         if (!$category) {

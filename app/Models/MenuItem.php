@@ -5,6 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\ModelTraits\SpatieTranslatable\HasTranslations;
+use Illuminate\Support\Facades\App;
 
 class MenuItem extends Model
 {
@@ -70,7 +71,11 @@ class MenuItem extends Model
                 break;
 
             case 'internal_link':
-                return is_null($this->link) ? '#' : url($this->link);
+                if(Language::getDefault() == \App::getLocale()){
+                    return is_null($this->link) ? '#' : url($this->link);
+                }
+
+                return is_null($this->link) ? '#' : url(\App::getLocale().'/'.$this->link);
                 break;
 
             case 'categories_link':
@@ -79,7 +84,11 @@ class MenuItem extends Model
 
             default: //page_link
                 if ($this->page) {
-                    return url($this->page->slug);
+                    if(Language::getDefault() == \App::getLocale()){
+                        return url($this->page->slug);
+                    }
+
+                    return url(\App::getLocale().'/'.$this->page->slug);
                 }
                 break;
         }
