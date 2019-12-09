@@ -39,6 +39,29 @@ ExpiresByType application/x-javascript "access plus 2592000 seconds"
     RewriteCond %{REQUEST_URI} (.+)/$
     RewriteRule ^ %1 [L,R=301]
 
+    #redirects
+    Redirect 301 /products/drives/obshepromishleniye/air /elektrodvigateli/seriya-air
+    Redirect 301 /products/drives/odnofazniye /elektrodvigateli/seriya-aire-220v
+    Redirect 301 /products/drives /elektrodvigateli
+    Redirect 301 /products/pumps/pogruzj /nasosy/pogruzhnye-drenazhnye
+    Redirect 301 /products/pumps /nasosy
+    Redirect 301 /products/vent/oseviye /ventilyatory
+    Redirect 301 /products/vent/krish /ventilyatory
+    Redirect 301 /products/vent /ventilyatory
+    Redirect 301 /products/spec/vilochnye /spectehnika/pogruzchiki
+    Redirect 301 /products/spec /spectehnika
+    Redirect 301 /articles /news
+    Redirect 301 /services /
+
+    RewriteCond %{QUERY_STRING} ^act=5$ [NC]
+    RewriteRule ^(.*)$ /nasosy/skvazhinnye-nasosy? [R=301,L]
+
+    RewriteCond %{QUERY_STRING} ^act=1$ [NC]
+    RewriteRule ^(.*)$ /nasosy? [R=301,L]
+
+    RewriteCond %{QUERY_STRING} ^act=2$ [NC]
+    RewriteRule ^(.*)$ /ventilyatory? [R=301,L]
+
     # Handle Front Controller...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_FILENAME} !-f
