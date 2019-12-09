@@ -124,7 +124,7 @@ class Product extends Model
     public function getPathAttribute()
     {
         if (isset($this->category->path)) {
-            return '/'.$this->category->path . '/' . $this->slug;
+            return $this->category->path . '/' . $this->slug;
         }
         return false;
     }
