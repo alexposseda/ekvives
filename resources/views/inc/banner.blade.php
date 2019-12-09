@@ -9,9 +9,15 @@
                     <?php $bCnt = 1;?>
                     <ul class="breadcrumb white" itemscope itemtype="http://schema.org/BreadcrumbList">
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <a href="/" itemprop="item"><span itemprop="name">@lang('banners.main')</span>
+                            <?php if(\App::getLocale() == \App\Models\Language::getDefault()):?>
+                            <a href="<?= url()->to('/')?>" itemprop="item"><span itemprop="name">@lang('banners.main')</span>
                                 <meta itemprop="position" content="<?= $bCnt?>"/>
                             </a>
+                            <?php else:?>
+                                <a href="<?= url()->to('/'.\App::getLocale())?>" itemprop="item"><span itemprop="name">@lang('banners.main')</span>
+                                    <meta itemprop="position" content="<?= $bCnt?>"/>
+                                </a>
+                            <?php endif;?>
                         </li>
                         <?php $bCnt++?>
                         @if(isset($breadcrumbs)) @foreach($breadcrumbs as $breadcrumb)

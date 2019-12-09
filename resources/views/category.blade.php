@@ -48,9 +48,7 @@
 				@foreach($category->children as $sub_category)
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4 project catalogItemCard mb-30">
 					<div class="productTypesWrap">
-						<a class="hoverButton" href="{{url()->to($sub_category->path)}}">
-							
-						</a>
+						<a class="hoverButton" href="{{url()->to($sub_category->path)}}"></a>
 						<div class="thumb">
 							<img class=" img_category" alt="product" src="{{$sub_category->getPhoto('image', 'min')}}">
 						</div>
@@ -62,9 +60,7 @@
 				@endforeach @foreach($category->products as $product)
 				<div class="col-12 col-sm-6 col-md-4 col-lg-4 project catalogItemCard mb-30">
 					<div class="productTypesWrap">
-						<a class="hoverButton" href="{{url()->to($product->path)}}">
-							
-						</a>
+						<a class="hoverButton" href="{{url()->to($product->path)}}"></a>
 						<div class="thumb">
 							<img class="img_category" alt="" src="{{$product->getPhoto('image', 'min')}}">
 						</div>
