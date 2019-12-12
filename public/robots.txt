@@ -1,5 +1,6 @@
 User-agent: *
 
 Disallow: /*?*
+Disallow: /en/
 
 Sitemap: https://ekvives.com/sitemap.xml
