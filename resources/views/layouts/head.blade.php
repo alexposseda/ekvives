@@ -3,20 +3,13 @@
 
 <head>
     <!-- Google Tag Manager -->
-    <script>(function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-WHZJJT2');</script>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-WLTH4JW');</script>
     <!-- End Google Tag Manager -->
+
 
     <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
@@ -43,11 +36,18 @@
     $app_locales = \App\Models\Language::getLocales();
     $default_locale = \App\Models\Language::getDefault();
     foreach($app_locales as $locale):
-        if($locale == $default_locale){
-          $url = url()->to('/');
-        }else{
-          $url = url()->to('/'.$locale);
-        }
+        $baseUrl = url()->to('/');
+        $path = $_SERVER['REQUEST_URI'];
+        $params = (!empty($_GET)) ? http_build_query($_GET) : null;
+    if($locale == $default_locale){
+        $url = $baseUrl.$path;
+    }else{
+        $url = $baseUrl.'/'.$locale.$path;
+    }
+
+    if(!empty($params)){
+        $url .= '?'.$params;
+    }
     ?>
     <link rel="alternate" hreflang="<?= $locale ?>" href="<?= $url?>"/>
 <?php endforeach;?>
@@ -83,6 +83,11 @@
 </head>
 
 <body class="">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLTH4JW"
+                  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div id="wrapper" class="clearfix">
 <!-- preloader
     <div id="preloader">
