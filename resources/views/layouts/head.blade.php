@@ -19,6 +19,7 @@
               content="{{$page->meta_title}}"/> @endif @endif  @if(trim($__env->yieldContent('no_index'))) @yield('no_index') @else @if(isset($page->no_index) && $page->no_index)
         <meta name="robots" content="noindex,nofollow"> @endif @endif  <!-- Page Title -->
     <title>@yield('meta_title', isset($page->meta_title) && $page->meta_title ? $page->meta_title : 'Ekvives')</title>
+	
     <!-- start:Open Graph -->
     @yield('OpenGraph')
 <!-- end:Open Graph -->
@@ -32,26 +33,7 @@
     <meta name="msapplication-config" content="/favicons/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
-    <?php
-    $app_locales = \App\Models\Language::getLocales();
-    $default_locale = \App\Models\Language::getDefault();
-    foreach($app_locales as $locale):
-        $baseUrl = url()->to('/');
-        $path = $_SERVER['REQUEST_URI'];
-        $params = (!empty($_GET)) ? http_build_query($_GET) : null;
-    if($locale == $default_locale){
-        $url = $baseUrl.$path;
-    }else{
-        $url = $baseUrl.'/'.$locale.$path;
-    }
-
-    if(!empty($params)){
-        $url .= '?'.$params;
-    }
-    ?>
-    <link rel="alternate" hreflang="<?= $locale ?>" href="<?= $url?>"/>
-<?php endforeach;?>
-
+    
 <!-- Stylesheet -->
     <!-- <link href="/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="/css/jquery-ui.min.css" rel="stylesheet" type="text/css"> -->
