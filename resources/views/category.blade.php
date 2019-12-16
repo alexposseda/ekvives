@@ -50,7 +50,7 @@
 					<div class="productTypesWrap">
 						<a class="hoverButton" href="{{url()->to($sub_category->path)}}"></a>
 						<div class="thumb">
-							<img class=" img_category" alt="product" src="{{$sub_category->getPhoto('image', 'min')}}">
+							<img class=" img_category" alt="{{$sub_category->title}}" src="{{$sub_category->getPhoto('image', 'min')}}">
 						</div>
 						<div class="project-details p-15 pt-10 pb-10">
 							<h3 class="title font-weight-700 text-uppercase mt-0">{{$sub_category->title}}</h3>
@@ -62,7 +62,7 @@
 					<div class="productTypesWrap">
 						<a class="hoverButton" href="{{url()->to($product->path)}}"></a>
 						<div class="thumb">
-							<img class="img_category" alt="" src="{{$product->getPhoto('image', 'min')}}">
+							<img class="img_category" alt="{{$product->title}}" src="{{$product->getPhoto('image', 'min')}}">
 						</div>
 						<div class="project-details p-15 pt-10 pb-10">
 						@if($product->article)

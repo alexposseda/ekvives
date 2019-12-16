@@ -68,11 +68,11 @@
                             <div id="slider-img-products">
                                 @if($product->image)
                                 <div class="s_block shadow" id="slide-main">
-                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" title="<?=  $product->title?>">
+                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" alt="<?=  $product->title?>">
                                 </div>
                                 @endif @foreach($product->images as $image)
                                 <div class="s_block shadow" id="slide-{{$loop->index+1}}">
-                                    <img class="animate1" src="{{$image}}" title="<?=  $product->title?>">
+                                    <img class="animate1" src="{{$image}}" alt="<?=  $product->title?>">
                                 </div>
                                 @endforeach
                             </div>
@@ -81,13 +81,13 @@
                                     @if($product->image)
                                     <li class="slide-main">
                                         <a href="#slide-main">
-                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" title="<?=  $product->title?>">
+                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" alt="<?=  $product->title?>">
                                         </a>
                                     </li>
                                     @endif @foreach($product->images as $image)
                                     <li class="slide-{{$loop->index+1}}">
                                         <a href="#slide-{{$loop->index+1}}">
-                                            <img class="animate2" src="{{$image}}" title="<?=  $product->title?>">
+                                            <img class="animate2" src="{{$image}}" alt="<?=  $product->title?>">
                                         </a>
                                     </li>
                                     @endforeach
@@ -96,14 +96,14 @@
                             @elseif($product->image)
                             <div id="slider-img-products">
                                 <div class="s_block shadow" id="slide-main">
-                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" title="<?=  $product->title?>">
+                                    <img class="animate1" src="{{$product->getPhoto('image', 'big')}}" alt="<?=  $product->title?>">
                                 </div>
                             </div>
                             <div id="img-nav">
                                 <ul>
                                     <li class="slide-main">
                                         <a href="#slide-main">
-                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" title="<?=  $product->title?>">
+                                            <img class="animate2" src="{{$product->getPhoto('image', 'min')}}" alt="<?=  $product->title?>">
                                         </a>
                                     </li>
                                 </ul>
@@ -164,7 +164,7 @@
                             <article class="post clearfix ">
                                 <div class="entry-header">
                                     <div class="post-thumb thumb">
-                                        <img src="{{$category->getPhoto('image', 'big')}}" alt="" class="img-responsive img-fullwidth">
+                                        <img src="{{$category->getPhoto('image', 'big')}}" alt="{{$category->title}}" class="img-responsive img-fullwidth">
                                     </div>
                                 </div>
                                 <div class="entry-content p-20">
@@ -182,7 +182,7 @@
                             <article class="post clearfix ">
                                 <div class="entry-header">
                                     <div class="post-thumb thumb">
-                                        <img src="{{$suggested_product->getPhoto('image', 'big')}}" alt="" class="img-responsive img-fullwidth">
+                                        <img src="{{$suggested_product->getPhoto('image', 'big')}}" alt="{{$suggested_product->title}}" class="img-responsive img-fullwidth">
                                     </div>
                                 </div>
                                 <div class="entry-content p-20">
