@@ -10,13 +10,15 @@
                     <ul class="breadcrumb white" itemscope itemtype="http://schema.org/BreadcrumbList">
                         <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                             <?php if(\App::getLocale() == \App\Models\Language::getDefault()):?>
-                            <a href="<?= url()->to('/')?>" itemprop="item"><span itemprop="name">@lang('banners.main')</span>
+                            <a href="<?= url()->to('/')?>" itemprop="item"><span
+                                        itemprop="name">@lang('banners.main')</span>
                                 <meta itemprop="position" content="<?= $bCnt?>"/>
                             </a>
                             <?php else:?>
-                                <a href="<?= url()->to('/'.\App::getLocale())?>" itemprop="item"><span itemprop="name">@lang('banners.main')</span>
-                                    <meta itemprop="position" content="<?= $bCnt?>"/>
-                                </a>
+                            <a href="<?= url()->to('/' . \App::getLocale())?>" itemprop="item"><span
+                                        itemprop="name">@lang('banners.main')</span>
+                                <meta itemprop="position" content="<?= $bCnt?>"/>
+                            </a>
                             <?php endif;?>
                         </li>
                         <?php $bCnt++?>
@@ -30,10 +32,8 @@
                             <?php $bCnt++?>
                         @endforeach @endif
                         <li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <strong itemprop="text">
-                                <span>{{$title}}</span>
-                                <meta itemprop="position" content="<?= $bCnt?>"/>
-                            </strong>
+                            <strong itemtype="http://schema.org/TEXT" itemprop="name">{{$title}}</strong>
+                            <meta itemprop="position" content="<?= $bCnt?>"/>
                         </li>
                     </ul>
                 </div>
