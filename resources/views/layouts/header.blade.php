@@ -35,13 +35,13 @@ $defaultLanguage = \App\Models\Language::getDefault();
 						<ul class="list-inline xs-text-center text-white mt-5 contactListHeader">
 							@foreach(Lang::get('header.phones') as $phone ) @if($phone != '-')
 							<li class="m-0 pl-10 pr-10">
-								<a href="tel: {{clearPhone($phone)}}" class="text-white">
+								<a href="tel:{{clearPhone($phone)}}" class="text-white">
 									<i class="fa fa-phone text-theme-colored"></i> {{$phone}}
 								</a>
 							</li>
 							@endif @endforeach @if(Lang::get('header.email') != '-')
 							<li class="m-0 pl-10 pr-10">
-								<a href="mailto: @lang('header.email')" class="text-white">
+								<a href="mailto:@lang('header.email')" class="text-white">
 									<i class="fa fa-envelope-o text-theme-colored"></i> @lang('header.email')</a>
 							</li>
 							@endif

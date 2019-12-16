@@ -63,7 +63,7 @@ if(!function_exists('clearPhone')){
                                 <?php
                                 $phone = Lang::get('footer.phone')
                                 ?>
-                                <a class="text-gray" href="tel: <?= clearPhone($phone)?>"><?= $phone?></a>
+                                <a class="text-gray" href="tel:<?= clearPhone($phone)?>"><?= $phone?></a>
                             </li>
                         @endif
                         @if(Lang::get('footer.email') != '-')
