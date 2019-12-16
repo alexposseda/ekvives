@@ -14,7 +14,7 @@
             @foreach($categories as $category)
                 <a href="{{url()->to($category->path)}}" class="col-6 col-sm-6 col-md-4 maxwidth500 mb-40 wow itemCard fadeInLeft itemCard itemCardButton" data-wow-duration="1s" data-wow-delay="0.1s">
                     <div class="mainCategoryItem">
-                        <img class="img-fullwidth" src="{{$category->getPhoto('image', 'min')}}" alt="">
+                        <img class="img-fullwidth" src="{{$category->getPhoto('image', 'min')}}" alt="{{$category->title}}">
                     </div>
                     <h4 class="font-weight-700 mt-20">{{$category->title}}</h4>
                     <p>{{$category->description ?? ''}}</p>              
