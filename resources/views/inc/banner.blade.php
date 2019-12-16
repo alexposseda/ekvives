@@ -30,8 +30,8 @@
                             <?php $bCnt++?>
                         @endforeach @endif
                         <li class="active" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                            <strong itemprop="item">
-                                <span itemprop="name">{{$title}}</span>
+                            <strong itemprop="text">
+                                <span>{{$title}}</span>
                                 <meta itemprop="position" content="<?= $bCnt?>"/>
                             </strong>
                         </li>
