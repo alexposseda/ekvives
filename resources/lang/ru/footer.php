@@ -1,7 +1,7 @@
 <?php 
 
  return [
-    "phone" => "(044)599-14-82",
+    "phone" => "38(044)599-14-82",
     "facebook" => "-",
     "twitter" => "-",
     "skype" => "-",
