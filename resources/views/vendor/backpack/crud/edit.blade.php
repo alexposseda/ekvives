@@ -36,6 +36,7 @@
 					  <ul class="dropdown-menu">
 						  <li><a href="/setlocale/en">English</a></li>
 						  <li><a href="/setlocale/ru">Русский</a></li>
+						  <li><a href="/setlocale/ua">Украинский</a></li>
 					  </ul>
 					</div>
 					<h3 class="box-title" style="line-height: 30px;">{{ trans('backpack::crud.edit') }}</h3>

@@ -17,6 +17,7 @@
 			<li class="dropdown-header">{{ trans('backpack::crud.edit_translations') }}:</li>
 			<li><a href="/setlocale/en">English</a></li>
 			<li><a href="/setlocale/ru">Русский</a></li>
+			<li><a href="/setlocale/ua">Украинский</a></li>
 		</ul>
 	</div>
 

@@ -18,11 +18,9 @@
       <!-- ========================================================= -->
         <div class="navbar-custom-menu pull-left">
             <ul class="nav navbar-nav">
-                @if (App::getLocale() === 'en')
-                    <li><a href="/setlocale/ru">English</a></li>
-                @else
-                    <li><a href="/setlocale/en">Русский</a></li>
-                @endif
+                <li <?= App::getLocale() == 'ru' ? 'class="active"' : ''?>><a href="/setlocale/ru">English</a></li>
+                <li <?= App::getLocale() == 'en' ? 'class="active"' : ''?>><a href="/setlocale/en">Русский</a></li>
+                <li <?= App::getLocale() == 'ua' ? 'class="active"' : ''?>><a href="/setlocale/ua">Украинский</a></li>
             </ul>
         </div>
       <!-- <li><a href="{{ url('/') }}"><i class="fa fa-home"></i> <span>Home</span></a></li> -->
