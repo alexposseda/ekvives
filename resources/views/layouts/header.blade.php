@@ -61,15 +61,17 @@ $defaultLanguage = \App\Models\Language::getDefault();
 							<li class="hiddenMenu">
 								<a class="mainLang">{{strtoupper(App::getLocale())}}</a>
 								<ul class="dropdown">
-
+										<?php $i = 1;?>
 									@foreach($locales as $language) @if(App::getLocale() != $language)
-									<li>
+
+									<li style="top: <?= 30 * $i?>px">
 										@if($defaultLanguage == $language)
 											<a href="<?= clearLangPartsFromUrl()?>">{{strtoupper($language)}}</a>
 										@else
 											<a href="{{url()->to($language . \Request::getRequestUri())}}">{{strtoupper($language)}}</a>
 										@endif
 									</li>
+									<?php $i++;?>
 									@endif @endforeach
 								</ul>
 							</li>
