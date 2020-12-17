@@ -10,7 +10,7 @@
         "no_index" => "-"
     ],
     "socials" => [
-        "facebook" => "https://www.facebook.com/%D0%AD%D0%BA%D0%B2%D0%B8%D0%B2%D0%B5%D1%81-131926580690234/?ref=search",
+        "facebook" => "https://www.facebook.com/%D0%AD%D0%BA%D0%B2%D0%B8%D0%B2%D0%B5%D1%81-131926580690234",
         "twitter" => "-",
         "google-plus" => "-",
         "instagram" => "-",
