@@ -18,8 +18,8 @@
       <!-- ========================================================= -->
         <div class="navbar-custom-menu pull-left">
             <ul class="nav navbar-nav">
-                <li <?= App::getLocale() == 'ru' ? 'class="active"' : ''?>><a href="/setlocale/ru">English</a></li>
-                <li <?= App::getLocale() == 'en' ? 'class="active"' : ''?>><a href="/setlocale/en">Русский</a></li>
+                <li <?= App::getLocale() == 'en' ? 'class="active"' : ''?>><a href="/setlocale/en">English</a></li>
+                <li <?= App::getLocale() == 'ru' ? 'class="active"' : ''?>><a href="/setlocale/ru">Русский</a></li>
                 <li <?= App::getLocale() == 'ua' ? 'class="active"' : ''?>><a href="/setlocale/ua">Украинский</a></li>
             </ul>
         </div>

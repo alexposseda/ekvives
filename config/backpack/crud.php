@@ -72,6 +72,7 @@ return [
     'locales' => [
         'en' => 'English',        
         "ru" => "Russian",
+        "ua" => "Ukranian",
     ],
 
 ];
