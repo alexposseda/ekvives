@@ -16,7 +16,7 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        if($request->route()->getPrefix() == 'admin' AND session()->get('override_locale')){
+        if($request->route()->getPrefix() == '/admin' AND session()->get('override_locale')){
             $current = session()->get('override_locale');
         }else{
             $app_locales = Language::getLocales();
