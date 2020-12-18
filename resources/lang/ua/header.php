@@ -3,7 +3,7 @@
  return [
     "disable_preloader" => "Disable Preloader",
     "email" => "ekvives@ekvives.com",
-    "search_placeholder" => "Поиск",
+    "search_placeholder" => "Пошук",
     "main" => [
         "meta_title" => "Ekvives",
         "meta_description" => "-",
