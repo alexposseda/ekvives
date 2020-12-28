@@ -4,8 +4,10 @@
 		array_shift($urlParts);
 
 		$url = implode('/', $urlParts) /*. (\Request::getQueryString() ? ('?' . \Request::getQueryString()) : '')*/;
-
-		return url()->to($url);
+		if(!empty($url)){
+			$url = '/'.$url;
+		}
+		return $url;
 	}
 
 	function clearPhone($phone){
@@ -66,9 +68,9 @@ $defaultLanguage = \App\Models\Language::getDefault();
 
 									<li style="top: <?= 30 * $i?>px">
 										@if($defaultLanguage == $language)
-											<a href="<?= clearLangPartsFromUrl()?>">{{strtoupper($language)}}</a>
+											<a href="<?= url()->to(clearLangPartsFromUrl())?>">{{strtoupper($language)}}</a>
 										@else
-											<a href="{{url()->to($language . \Request::getRequestUri())}}">{{strtoupper($language)}}</a>
+											<a href="{{url()->to($language . clearLangPartsFromUrl())}}">{{strtoupper($language)}}</a>
 										@endif
 									</li>
 									<?php $i++;?>
