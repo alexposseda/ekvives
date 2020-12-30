@@ -64,32 +64,32 @@
     Route::post('en/product', 'CategoryController@store');
     Route::post('en/price_clarify', 'PriceController@store');
     ### EN end
-    ### UA start
-    Route::get('/ua', 'IndexController@index');
+    ### RU start
+    Route::get('/ru', 'IndexController@index');
     
-    Route::get('ua/about-us', 'PageController@aboutUs')->name('about-us');
-    Route::get('ua/testimonials', 'TestimonialController@index')->name('testimonials');
-    Route::get('ua/documents', 'DocumentController@index')->name('documents');
-    Route::get('ua/reference-objects', 'GalleryController@index')->name('galleries');
-    Route::get('ua/reference-objects/{gallery}', 'GalleryController@show')->name('gallery');
+    Route::get('ru/about-us', 'PageController@aboutUs')->name('about-us');
+    Route::get('ru/testimonials', 'TestimonialController@index')->name('testimonials');
+    Route::get('ru/documents', 'DocumentController@index')->name('documents');
+    Route::get('ru/reference-objects', 'GalleryController@index')->name('galleries');
+    Route::get('ru/reference-objects/{gallery}', 'GalleryController@show')->name('gallery');
     
-    Route::get('ua/categories', 'CategoryController@index')->name('categories');
-    Route::get('ua/search', 'SearchController@index')->name('search');
+    Route::get('ru/categories', 'CategoryController@index')->name('categories');
+    Route::get('ru/search', 'SearchController@index')->name('search');
     
-    Route::get('ua/categories/{category}', 'CategoryController@show')->name('category.show');
+    Route::get('ru/categories/{category}', 'CategoryController@show')->name('category.show');
     
-    Route::get('ua/news', 'NewsController@index')->name('news');
-    Route::get('ua/news/{article}', 'NewsController@show')->name('article');
+    Route::get('ru/news', 'NewsController@index')->name('news');
+    Route::get('ru/news/{article}', 'NewsController@show')->name('article');
     
-    Route::get('ua/prices', 'PriceController@index')->name('prices');
+    Route::get('ru/prices', 'PriceController@index')->name('prices');
     
-    Route::get('ua/contacts', 'ContactController@index')->name('contacts');
+    Route::get('ru/contacts', 'ContactController@index')->name('contacts');
     
-    Route::post('ua/subscribe', 'ContactController@subscribe');
-    Route::post('ua/contact', 'ContactController@store');
-    Route::post('ua/product', 'CategoryController@store');
-    Route::post('ua/price_clarify', 'PriceController@store');
-    ### UA end
+    Route::post('ru/subscribe', 'ContactController@subscribe');
+    Route::post('ru/contact', 'ContactController@store');
+    Route::post('ru/product', 'CategoryController@store');
+    Route::post('ru/price_clarify', 'PriceController@store');
+    ### RU end
     
     // Admin Interface Routes
     Route::group(['prefix'     => 'admin',
